@@ -1,14 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title></title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="index.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puppy Bowl</title>
+    
+    <link rel="stylesheet" href="index.css">
     <script src="index.js" defer></script>
   </head>
-  <body>
-    <div id="app"></div>
-    //will need to add an achor point so the dom has somewhere to go. 
 
+  <body>
+    <header class="page-header">
+      <h1>Puppy Bowl</h1>
+      <hr>
+    </header>
+
+    <!-- Puppy roster -->
+    <section class="puppy-roster" aria-label="Puppy roster">
+      <ul class="puppy-list">
+        <li>
+          <button class="puppy-card" type="button">
+            <img
+              src="https://placehold.co/50x70?text=Gina"
+              alt="Gina"
+            >
+            <span>Gina</span>
+          </button>
+        </li>
+
+        <li>
+          <button class="puppy-card selected" type="button">
+            <img
+              src="https://placehold.co/50x70?text=Huck"
+              alt="Huck"
+            >
+            <span>Huck</span>
+          </button>
+        </li>
+
+        <li>
+          <button class="puppy-card" type="button">
+            <img
+              src="https://placehold.co/50x70?text=Jack"
+              alt="Jack"
+            >
+            <span>Jack</span>
+          </button>
+        </li>
+
+        <li>
+          <button class="puppy-card" type="button">
+            <img
+              src="https://placehold.co/50x70?text=Foo"
+              alt="Foo"
+            >
+            <span>Foo</span>
+          </button>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Selected puppy -->
+    <section
+      class="selected-pup-container"
+      aria-label="Selected puppy details"
+    >
+      <img
+        class="selected-pup-image"
+        src="https://placehold.co/300x250?text=Huck"
+        alt="Huck"
+      >
+
+      <div class="selected-pup-info">
+        <p><strong>Name:</strong> Huck</p>
+        <p><strong>ID:</strong> 13171</p>
+        <p><strong>Breed:</strong> Miniature Poodle / Shih Tzu</p>
+        <p><strong>Team:</strong> Ruff</p>
+        <p><strong>Status:</strong> Bench</p>
+      </div>
+
+      <div class ="selected-buttons-box">
+        <button class="selected-pup-button" type="button">
+            Add To Team
+        </button>  
+
+        <button class="selected-pup-button" type="button">
+            Remove From Roster
+        </button>
+      </div>
+
+    </section>
+
+    <!-- Invite puppy form -->
+    <form class="invite-pup-form">
+      <h2>Invite A Puppy</h2>
+
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="breed">Breed</label>
+      <input type="text" id="breed" name="breed" required>
+
+      <label for="status">Status</label>
+      <select id="status" name="status">
+        <option value="bench">Bench</option>
+        <option value="field">Field</option>
+      </select>
+
+      <label for="imageUrl">Image URL</label>
+      <input type="url" id="imageUrl" name="imageUrl">
+
+      <button type="submit">Invite Puppy</button>
+    </form>
   </body>
 </html>

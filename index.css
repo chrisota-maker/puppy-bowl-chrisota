@@ -1,0 +1,166 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 20px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "header header"
+    "roster selected"
+    "form selected";
+  gap: 16px 32px;
+
+  font-family: Arial, sans-serif;
+  background-color: white;
+}
+
+/* Header */
+
+.page-header {
+  grid-area: header;
+}
+
+h1 {
+  margin: 0;
+  letter-spacing: 1px;
+}
+
+hr {
+  margin: 5px 0 0;
+  border: 0;
+  border-top: 2px solid lightgray;
+}
+
+/* Puppy roster */
+
+.puppy-roster {
+  grid-area: roster;
+}
+
+.puppy-list {
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  list-style: none;
+}
+
+.puppy-card {
+  width: 100%;
+  padding: 4px;
+
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  font-size: 1.25rem;
+  text-align: left;
+  background-color: white;
+
+  border: 2px dashed black;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.puppy-card img {
+  width: 45px;
+  height: 65px;
+
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.puppy-card.selected {
+  font-weight: bold;
+  font-style: italic;
+  border-style: solid;
+}
+
+.puppy-card:hover {
+  background-color: #f0f0f0;
+}
+
+/* Selected puppy */
+
+.selected-pup-container {
+  grid-area: selected;
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.selected-pup-image {
+  width: 100%;
+  max-width: 300px;
+  height: 250px;
+
+  align-self: center;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+.selected-pup-info p {
+  margin: 6px 0;
+}
+
+.selected-pup-button {
+  width: 100%;
+  padding: 8px;
+
+  cursor: pointer;
+}
+
+.selected-buttons-box{
+    display: flex;
+}
+
+/* Invite puppy form */
+
+.invite-pup-form {
+  grid-area: form;
+
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.invite-pup-form h2 {
+  margin: 0 0 4px;
+}
+
+.invite-pup-form input,
+.invite-pup-form select {
+  width: 100%;
+  padding: 6px;
+
+  font: inherit;
+}
+
+.invite-pup-form button {
+  margin-top: 4px;
+  padding: 7px;
+
+  font: inherit;
+  cursor: pointer;
+}
+
+/* Smaller screens */
+
+@media (max-width: 700px) {
+  body {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "roster"
+      "selected"
+      "form";
+  }
+}
