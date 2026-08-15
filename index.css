@@ -111,15 +111,15 @@ hr {
   margin: 6px 0;
 }
 
-.selected-pup-button {
-  width: 100%;
-  padding: 8px;
-
-  cursor: pointer;
+.selected-buttons-box {
+  display: flex;
+  gap: 10px;
 }
 
-.selected-buttons-box{
-    display: flex;
+.selected-pup-button {
+  flex: 1;
+  padding: 8px;
+  cursor: pointer;
 }
 
 /* Invite puppy form */
