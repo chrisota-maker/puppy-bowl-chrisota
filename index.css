@@ -6,6 +6,11 @@ body {
   margin: 0;
   padding: 20px;
 
+  font-family: Arial, sans-serif;
+  background-color: white;
+}
+
+#app {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-areas:
@@ -13,9 +18,6 @@ body {
     "roster selected"
     "form selected";
   gap: 16px 32px;
-
-  font-family: Arial, sans-serif;
-  background-color: white;
 }
 
 /* Header */
@@ -111,14 +113,10 @@ hr {
   margin: 6px 0;
 }
 
-.selected-buttons-box {
-  display: flex;
-  gap: 10px;
-}
-
 .selected-pup-button {
-  flex: 1;
+  width: 100%;
   padding: 8px;
+
   cursor: pointer;
 }
 
@@ -155,7 +153,7 @@ hr {
 /* Smaller screens */
 
 @media (max-width: 700px) {
-  body {
+  #app {
     grid-template-columns: 1fr;
     grid-template-areas:
       "header"
